@@ -1,14 +1,15 @@
 import React from 'react'
 import {Helmet} from "react-helmet";
-const Home = () => {
+
+const Profile = () => {
   return (
     <div>
         <Helmet>
-        <title>Home</title>
+            <title>user Profile</title>
         </Helmet>
-       Home is here
+        the profile is here
     </div>
   )
 }
 
-export default Home
+export default Profile
