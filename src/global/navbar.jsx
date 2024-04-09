@@ -5,7 +5,7 @@ import { AuthContext } from "../context/authprovider";
 
 const Navbar = () => {
     const {user,logOut}=useContext(AuthContext)
-    console.log(user)
+    console.log(user);
     
     const links=<>
      <li><NavLink to="/">Home</NavLink></li>
@@ -46,6 +46,7 @@ const handelCurrentUserLogOut=()=>{
   {
     user?<ul className="menu menu-horizontal px-1 navbar-end">
     <li><NavLink to="/logout" onClick={handelCurrentUserLogOut}>Log out</NavLink></li>
+    <p>{user.displayName}</p>
    </ul>:<ul className="menu menu-horizontal px-1 navbar-end">
     {loginRegister}
    </ul>

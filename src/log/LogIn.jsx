@@ -32,10 +32,10 @@ const LogIn = () => {
       <Helmet>
         <title>Log in from</title>
       </Helmet>
-      <div className="hero min-h-full bg-base-200">
-        <div className="hero-content flex-col ">
+      <div className="hero">
+        <div className="hero-content flex-col lg:w-2/3 w-full ">
             <h1 className="text-3xl font-bold">Login now!</h1>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card shrink-0 w-full max-w-full shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handelLogInSubmit}>
             <div className="form-control">
                 <label className="label">
@@ -66,7 +66,10 @@ const LogIn = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+
+            here
           </div>
+         
         </div>
       </div>
     </div>

@@ -7,9 +7,10 @@ import 'react-toastify/dist/ReactToastify.css';
 // import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../context/authprovider";
-
+import { updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
-  
+  const navigate=useNavigate()
   const {createUser}=useContext(AuthContext);
   const [error,setError]=useState()
   // const naviget=useNavigate();
@@ -38,12 +39,29 @@ const Register = () => {
         // Signed up
         const user = userCredential.user;
         console.log(user)
+        
+        
+        updateProfile(user, {
+          displayName: userName,
+          photoURL: userphotoUrl,
+        })
+        .then(() => {
+          toast("user created successfully");
+          navigate("/")
+        }).catch((error) => {
+          // An error occurred
+          console.log(error)
+          // ...
+        });
+      
+        
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // console.log(errorMessage);
+        console.log(errorMessage)
         toast(`Your already Have account please log in`);
         // naviget("/login");
         // ..
