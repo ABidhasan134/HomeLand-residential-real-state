@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../context/authprovider";
+import { useNavigate } from "react-router-dom";
 const LogIn = () => {
+
+  const {logInuser}=useContext(AuthContext)
+  const navigate=useNavigate()
+  const handelLogInSubmit=(e)=>{
+    e.preventDefault();
+    const logEmail=e.target.email.value;
+    const logPassword=e.target.password.value;
+    // console.log(logEmail,logPassword);
+    logInuser(logEmail,logPassword)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user);
+      // ...
+      navigate("/")
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
+  
+
+  }
   return (
     <div>
       <Helmet>
@@ -10,8 +36,8 @@ const LogIn = () => {
         <div className="hero-content flex-col ">
             <h1 className="text-3xl font-bold">Login now!</h1>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
-              <div className="form-control">
+            <form className="card-body" onSubmit={handelLogInSubmit}>
+            <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
@@ -19,9 +45,11 @@ const LogIn = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
+                  name="email"
                   required
                 />
               </div>
+              {/* password input */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
@@ -30,13 +58,9 @@ const LogIn = () => {
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
+                  name="password"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>

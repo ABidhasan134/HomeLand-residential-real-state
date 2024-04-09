@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { useContext} from "react";
 import { Link, NavLink } from 'react-router-dom'
 
+import { AuthContext } from "../context/authprovider";
+
 const Navbar = () => {
+    const {user,logOut}=useContext(AuthContext)
+    console.log(user)
+    
     const links=<>
      <li><NavLink to="/">Home</NavLink></li>
      <li><NavLink to="/profile">Profile</NavLink></li>
+     <li><NavLink to="/updateprofile">Update Profile</NavLink></li>
     
-    <li><a>Item 3</a></li></>
+    </>
     const loginRegister=<>
     <li><NavLink to="/login">Log In</NavLink></li>
     <li><NavLink to="/register">Register</NavLink></li>
     </>
+    const logOutconditonalBtn=<>
+    {/* <li><NavLink to="/logout" onClick={handelCurrentUserLogOut}>Log out</NavLink></li> */}
+    </>
+
+const handelCurrentUserLogOut=()=>{
+  // logout fucntion form context on need paramiter
+  logOut();
+}
   return (
     <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -29,9 +43,14 @@ const Navbar = () => {
      {links}
     </ul>
   </div>
-  <ul className="menu menu-horizontal px-1 navbar-end">
-     {loginRegister}
-    </ul>
+  {
+    user?<ul className="menu menu-horizontal px-1 navbar-end">
+    <li><NavLink to="/logout" onClick={handelCurrentUserLogOut}>Log out</NavLink></li>
+   </ul>:<ul className="menu menu-horizontal px-1 navbar-end">
+    {loginRegister}
+   </ul>
+  }
+
 </div>
   )
 }
