@@ -15,9 +15,9 @@ const Home = () => {
         {/* <p>
        {authInfo}</p> */}
        home component
-       {
-        user?toast("log in successfully"):""
-       }
+       {/* {
+        user?toast("there in successfully"):""
+       } */}
        <ToastContainer></ToastContainer>
     </div>
   )

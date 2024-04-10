@@ -5,7 +5,7 @@ import { AuthContext } from "../context/authprovider";
 
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
-  console.log(loading);
+  
   const links = (
     <>
       <li>
@@ -30,18 +30,12 @@ const Navbar = () => {
       </li>
     </>
   );
-  // if(!user.photoURL){
-  //   return <span className="loading loading-spinner loading-lg"></span>
-  // }
 
   const handleCurrentUserLogOut = () => {
-    // logout function from context
     logOut();
   };
 
-  return loading ? (
-    <span className="loading loading-spinner loading-lg"></span>
-  ) : (
+  return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">

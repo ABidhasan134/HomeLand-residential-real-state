@@ -1,14 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../context/authprovider";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
-import { GithubAuthProvider,signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
+import { FaGithub } from "react-icons/fa6";
+import { FaGoogle } from "react-icons/fa";
 
 const LogIn = () => {
-  const { logInuser,user } = useContext(AuthContext);
+  const { logInuser } = useContext(AuthContext);
   const gitHubProvider = new GithubAuthProvider();
+  const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
 
   // from submit function
@@ -27,36 +30,47 @@ const LogIn = () => {
         // navigate("/");
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorMessage);
+        // console.log(errorMessage);
+        toast(errorMessage);
       });
+      e.target.reset();
   };
 
-  // github log in function 
   // GitHub login function 
 const githublogInHandel = () => {
   signInWithPopup(auth, gitHubProvider)
     .then((result) => {
       // The signed-in user info.
       const user = result.user;
-      toast("GitHub login successful");
-      // navigate("/");
+      // toast("GitHub login successful");
+      navigate("/");
     })
     .catch((error) => {
       // Handle GitHub login errors
       const errorCode = error.code;
       const errorMessage = error.message;
-      toast.error(`GitHub login failed: ${errorMessage}`);
+      // toast.error(`GitHub login failed: ${errorMessage}`);
     });
+  };
+
+  // google login function
+  const handelGoogleSubmit = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        setPerson(user);
+        console.log(user);
+      })
+      .catch((error) => console.log("error", error.message));
   };
   return (
     <div>
       <Helmet>
         <title>Log in from</title>
       </Helmet>
-      {
-        user? 'your are logged in':
+
         <div className="hero">
           <div className="hero-content flex-col lg:w-2/3 w-full ">
             <h1 className="text-3xl font-bold">Login now!</h1>
@@ -89,20 +103,21 @@ const githublogInHandel = () => {
                   <ToastContainer></ToastContainer>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">Login</button>
+                  <button className="btn bg-sky-400 hover:bg-sky-700 hover:text-white">Login</button>
                 </div>
               </form>
   
               <div>
-                <div>
-                  <button onClick={githublogInHandel}>git Hub logIn</button>
-                  
+                <div className="w-full  p-6 gap-5">
+                  <button className="btn btn-outline w-[48%] ml-2 mr-2" onClick={githublogInHandel}>
+                    <span className="text-2xl"><FaGithub></FaGithub></span>git Hub logIn</button>
+                  <button className="btn bg-transparent bottom-2 border-green-800 w-[48%] ml-2 mr-2 hover:bg-green-500" onClick={handelGoogleSubmit}>
+                  <span className="text-2xl"><FaGoogle></FaGoogle></span>Google log in</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      }
     </div>
   );
 };
