@@ -11,9 +11,9 @@ const AuthProvider = ({children}) => {
   // function for createuser function
   const createUser=(email,password)=>{
     // use firebase build in functions
+    setLoading(true);
     return createUserWithEmailAndPassword(auth,email,password)
     // when user is createing loading should be true 
-    setLoading(true);
   }
   const logInuser=(email,password)=>{
     // use firebase build in functions

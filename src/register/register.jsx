@@ -9,10 +9,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../context/authprovider";
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
+
 const Register = () => {
   const navigate=useNavigate()
   const {createUser}=useContext(AuthContext);
   const [error,setError]=useState()
+  const [seePass, setSeePassword]=useState(false)
   // const naviget=useNavigate();
   // console.log(creatUser);
   const handelregisterSubmit = (e) => {
@@ -97,8 +101,8 @@ const Register = () => {
                   <span className="label-text">Add photo url</span>
                 </label>
                 <input
-                  type="text"
-                  placeholder="text"
+                  type="url"
+                  placeholder="url"
                   className="input input-bordered"
                   name="url"
                   required
@@ -118,17 +122,21 @@ const Register = () => {
                 />
               </div>
               {/* password input */}
-              <div className="form-control">
+              <div className="form-control ">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
+                <div>
+                <input 
+                  type={seePass?"text":"password"}
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   name="password"
                   required
                 />
+                
+                <span className="absolute right-12 mt-2 sm:text-3xl text-2xl hover:cursor-pointer " onClick={()=>setSeePassword(!seePass)}>{seePass?<FaRegEyeSlash></FaRegEyeSlash>:<FaRegEye></FaRegEye>}</span>
+                </div>
               </div>
               {/* log in btn */}
               <div className="form-control mt-6">

@@ -1,7 +1,10 @@
 import React, { useContext } from 'react'
 import {Helmet} from "react-helmet";
 // import { AuthContext } from '../context/authprovider';
+import { ToastContainer, toast } from 'react-toastify';
+import { AuthContext } from '../context/authprovider';
 const Home = () => {
+  const {user}=useContext(AuthContext);
   // const authInfo=useContext(AuthContext)
   // console.log(authInfo);
   return (
@@ -12,6 +15,10 @@ const Home = () => {
         {/* <p>
        {authInfo}</p> */}
        home component
+       {
+        user?toast("log in successfully"):""
+       }
+       <ToastContainer></ToastContainer>
     </div>
   )
 }
