@@ -11,6 +11,7 @@ import AuthProvider from "./context/authprovider.jsx";
 import Userprofile from "./userprofile/userprofile.jsx";
 import UpdateProfile from "./profileUpdate.jsx/updateprofile.jsx";
 import LogOut from "./log/logOut.jsx";
+import PriveteRoute from "./privetroute/priveteRoute.jsx";
 // import Authprovider from './context/authprovider.jsx';
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Userprofile></Userprofile>,
+        element: <PriveteRoute><Userprofile></Userprofile></PriveteRoute>,
       },
       {
         path: "/login",
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateprofile",
-        element: <UpdateProfile></UpdateProfile>,
+        element: <PriveteRoute><UpdateProfile></UpdateProfile></PriveteRoute>,
       },
       {
         path: "/logout",

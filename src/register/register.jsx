@@ -15,7 +15,7 @@ import Successful from "./successful";
 
 const Register = () => {
   const navigate=useNavigate()
-  const {createUser,user}=useContext(AuthContext);
+  const {createUser,user,logInuser}=useContext(AuthContext);
   const [error,setError]=useState()
   const [seePass, setSeePassword]=useState(false)
   // const naviget=useNavigate();
@@ -43,7 +43,7 @@ const Register = () => {
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
-        console.log(user)
+        // console.log(user)
         
         
         updateProfile(user, {
@@ -58,19 +58,19 @@ const Register = () => {
           console.log(error)
           // ...
         });
+        logInuser(useremail,userpassword)
+
       
         e.target.reset();
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
-        // console.log(errorMessage);
+        
         console.log(errorMessage)
         toast(`Your already Have account please log in`);
-        // naviget("/login");
-        // ..
       });
+      
   };
   return (
     <div>
@@ -83,7 +83,7 @@ const Register = () => {
           <div className="hero-content flex-col lg:w-2/3 w-full ">
             <h1 className="lg:text-5xl text-3xl font-bold ">Register</h1>
   
-            <div className="card shrink-0 w-full max-w-full shadow-2xl bg-base-100">
+            <div className="card shrink-0 w-full max-w-full shadow-2xl  bg-gray-100">
               <form className="card-body" onSubmit={handelregisterSubmit}>
                 {/* name input */}
                 <div className="form-control">

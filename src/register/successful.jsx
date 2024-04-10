@@ -20,7 +20,7 @@ const Successful = () => {
           estate endeavors. Feel free to customize it further to better fit your brand's tone and style.
         </p>
         <Link className='btn bg-sky-400 hover:bg-sky-700 
-        mt-4 hover:text-white' to="/">Find Home</Link>
+        mt-4 hover:text-white' to="/login">Log In </Link>
         </div>
         
     </div>

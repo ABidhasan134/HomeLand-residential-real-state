@@ -1,7 +1,7 @@
 import React, { useContext} from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../context/authprovider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
 import { GithubAuthProvider,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
@@ -28,12 +28,16 @@ const LogIn = () => {
         toast("Login successful")
         // ...
         // navigate("/");
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
       })
       .catch((error) => {
         // const errorCode = error.code;
         const errorMessage = error.message;
         // console.log(errorMessage);
-        toast(errorMessage);
+        toast("you don't have an account");
+        
       });
       e.target.reset();
   };
@@ -45,7 +49,11 @@ const githublogInHandel = () => {
       // The signed-in user info.
       const user = result.user;
       // toast("GitHub login successful");
-      navigate("/");
+      toast("Login successful with Google");
+      
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
     })
     .catch((error) => {
       // Handle GitHub login errors
@@ -61,7 +69,11 @@ const githublogInHandel = () => {
       .then((result) => {
         const user = result.user;
         setPerson(user);
-        console.log(user);
+        toast("Login successful with Google");
+        // console.log(user);
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
       })
       .catch((error) => console.log("error", error.message));
   };
@@ -71,8 +83,8 @@ const githublogInHandel = () => {
         <title>Log in from</title>
       </Helmet>
 
-        <div className="hero">
-          <div className="hero-content flex-col lg:w-2/3 w-full ">
+        <div className="hero bg-sky-50 h-[80vh]">
+          <div className="hero-content flex-col lg:w-2/3 w-full">
             <h1 className="text-3xl font-bold">Login now!</h1>
             <div className="card shrink-0 w-full max-w-full shadow-2xl bg-base-100">
               <form className="card-body" onSubmit={handelLogInSubmit}>
@@ -111,10 +123,18 @@ const githublogInHandel = () => {
                 <div className="w-full  p-6 gap-5">
                   <button className="btn btn-outline w-[48%] ml-2 mr-2" onClick={githublogInHandel}>
                     <span className="text-2xl"><FaGithub></FaGithub></span>git Hub logIn</button>
-                  <button className="btn bg-transparent bottom-2 border-green-800 w-[48%] ml-2 mr-2 hover:bg-green-500" onClick={handelGoogleSubmit}>
+                  <button className="btn bg-transparent bottom-2 border-green-800 w-[48%] ml-2 mr-2 hover:bg-green-800 hover:text-white" onClick={handelGoogleSubmit}>
                   <span className="text-2xl"><FaGoogle></FaGoogle></span>Google log in</button>
                 </div>
               </div>
+              
+              <div className="flex justify-center mb-6 text-xl">
+                <p>If you don't have account. please </p>
+                <Link to="/register" className="ml-1 text-blue-500 underline">
+                  Sing In
+                </Link>
+              </div>
+
             </div>
           </div>
         </div>

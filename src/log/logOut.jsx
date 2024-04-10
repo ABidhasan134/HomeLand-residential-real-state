@@ -1,10 +1,8 @@
 import React from 'react'
-
+import { Navigate } from "react-router-dom";
 const LogOut = () => {
   return (
-    <div>
-       Log out
-    </div>
+ <Navigate to="/login"></Navigate>
   )
 }
 

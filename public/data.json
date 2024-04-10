@@ -1,0 +1,162 @@
+[
+    {
+        "image": "path/to/image1.jpg",
+        "estate_title": "Oceanfront Penthouse",
+        "id": 1,
+        "segment_name": "Penthouse",
+        "description": "Stunning penthouse apartment with breathtaking ocean views. Features spacious living area, gourmet kitchen, private balcony, and access to resort amenities.",
+        "price": 10000000,
+        "status": "sale",
+        "area": "3000 sq ft",
+        "location": "Miami Beach, Florida",
+        "facilities": [
+          "Living room",
+          "Swimming pool",
+          "Kitchen",
+          "Balcony",
+          "Gym"
+        ],
+        "view_property_button": "View Property"
+      },
+      {
+        "image": "path/to/image2.jpg",
+        "estate_title": "Secluded Beachfront Villa",
+        "id": 2,
+        "segment_name": "Villa",
+        "description": "Private beachfront villa nestled amidst lush greenery. Offers a serene escape with direct beach access, infinity pool, and luxurious amenities.",
+        "price": 7500000,
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Tulum, Mexico",
+        "facilities": [
+          "Living room",
+          "Swimming pool",
+          "Kitchen",
+          "Bedrooms (4)",
+          "Staff quarters"
+        ],
+        "view_property_button": "View Property"
+      },
+  
+      {
+        "image": "path/to/image5.jpg",
+        "estate_title": "Private Island Oasis",
+        "id": 5,
+        "segment_name": "Private Island",
+        "description": "Own your own piece of paradise! Exclusive private island with pristine beaches, luxurious accommodations, and unparalleled privacy.",
+        "price": "Price Upon Request",
+        "status": "sale",
+        "area": "20 acres",
+        "location": "South Pacific",
+        "facilities": [
+          "Main residence",
+          "Guest bungalows (2)",
+          "Private beach",
+          "Staff quarters",
+          "Boat dock"
+        ],
+        "view_property_button": "View Property"
+      },{
+        "image": "path/to/image6.jpg",
+        "estate_title": "Skyline Mansion",
+        "id": 6,
+        "segment_name": "Mansion",
+        "description": "Ultra-modern mansion perched atop a skyscraper, boasting panoramic city views. Features a private rooftop infinity pool, smart home technology, and dedicated entertainment room.",
+        "price": 15000000,
+        "status": "sale",
+        "area": "10,000 sq ft",
+        "location": "New York City, New York",
+        "facilities": [
+          "Living room",
+          "Swimming pool (Rooftop)",
+          "Kitchen (Gourmet)",
+          "Bedrooms (7)",
+          "Bathrooms (10)",
+          "Home theater",
+          "Security system"
+        ],
+        "view_property_button": "View Property"
+      },
+      {
+        "image": "path/to/image7.jpg",
+        "estate_title": "Swiss Ski Chalet",
+        "id": 7,
+        "segment_name": "Chalet",
+        "description": "Luxurious ski-in/ski-out chalet nestled in the Swiss Alps. Offers breathtaking mountain views, a cozy fireplace, and access to world-class skiing facilities.",
+        "price": 8000000,
+        "status": "sale",
+        "area": "4500 sq ft",
+        "location": "Gstaad, Switzerland",
+        "facilities": [
+          "Living room (Fireplace)",
+          "Swimming pool (Indoor)",
+          "Kitchen",
+          "Bedrooms (5)",
+          "Bathrooms (6)",
+          "Steam room",
+          "Ski storage"
+        ],
+        "view_property_button": "View Property"
+      },
+      {
+        "image": "path/to/image8.jpg",
+        "estate_title": "Vineyard Estate with Winery",
+        "id": 8,
+        "segment_name": "Estate",
+        "description": " Sprawling estate nestled amidst rolling vineyards. Includes a charming manor house, a state-of-the-art winery, and breathtaking countryside views.",
+        "price": 20000000,
+        "status": "sale",
+        "area": "50 acres",
+        "location": "Napa Valley, California",
+        "facilities": [
+          "Main house",
+          "Swimming pool",
+          "Guest house",
+          "Winery",
+          "Vineyards",
+          "Wine cellar",
+          "Horse stables"
+        ],
+        "view_property_button": "View Property"
+      },
+  
+      {
+        "image": "path/to/image14.jpg",
+        "estate_title": "Secluded Eco-Resort",
+        "id": 14,
+        "segment_name": "Resort",
+        "description": "Sustainable luxury resort nestled in a pristine rainforest. Offers private villas, eco-friendly practices, and unparalleled access to nature.",
+        "price": "Starting at $5000/night",
+        "status": "rent",
+        "area": "Varies (villas)",
+        "location": "Costa Rica",
+        "facilities": [
+          "Private villas with pools",
+          "Spa",
+          "Fine dining restaurants",
+          "Adventure activities",
+          "Sustainability initiatives"
+        ],
+        "view_property_button": "View Property"
+      },
+      {
+        "image": "path/to/image15.jpg",
+        "estate_title": "Historic Castle",
+        "id": 15,
+        "segment_name": "Castle",
+        "description": "Live like royalty in this meticulously restored historic castle. Boasts stunning architecture, expansive grounds, and a rich history.",
+        "price": "Price Upon Request",
+        "status": "sale",
+        "area": "25,000 sq ft",
+        "location": "Scottish Highlands, Scotland",
+        "facilities": [
+          "Grand living areas",
+          "Formal gardens",
+          "Library",
+          "Multiple guest rooms",
+          "Staff quarters",
+          "Helicopter pad"
+        ],
+        "view_property_button": "View Property"
+    }
+]
