@@ -4,7 +4,6 @@ import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./Home/home.jsx";
-import Profile from "./profileUpdate.jsx/updateprofile.jsx";
 import LogIn from "./log/LogIn.jsx";
 import Register from "./register/register.jsx";
 import AuthProvider from "./context/authprovider.jsx";
@@ -12,6 +11,8 @@ import Userprofile from "./userprofile/userprofile.jsx";
 import UpdateProfile from "./profileUpdate.jsx/updateprofile.jsx";
 import LogOut from "./log/logOut.jsx";
 import PriveteRoute from "./privetroute/priveteRoute.jsx";
+import Successful from "./register/successful.jsx";
+import CardDitails from "./Home/componente/cardDitails.jsx";
 // import Authprovider from './context/authprovider.jsx';
 
 const router = createBrowserRouter([
@@ -43,6 +44,16 @@ const router = createBrowserRouter([
         path: "/logout",
         element: <LogOut></LogOut>,
       },
+      {
+        path: "/details/:id", // Corrected path and added leading slash
+        loader: ({params}) =>params.id ,
+        element:<CardDitails></CardDitails> // Assuming you have a component named CardDetails
+      },
+      {
+        path:"/successregester",
+        element:<Successful></Successful>
+      },
+      
     ],
   },
 ]);

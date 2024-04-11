@@ -15,7 +15,7 @@ import Successful from "./successful";
 
 const Register = () => {
   const navigate=useNavigate()
-  const {createUser,user,logInuser}=useContext(AuthContext);
+  const {createUser,user,logOut}=useContext(AuthContext);
   const [error,setError]=useState()
   const [seePass, setSeePassword]=useState(false)
   // const naviget=useNavigate();
@@ -58,10 +58,9 @@ const Register = () => {
           console.log(error)
           // ...
         });
-        logInuser(useremail,userpassword)
-
-      
+        logOut();
         e.target.reset();
+        navigate("/successregester")
         // ...
       })
       .catch((error) => {
@@ -77,8 +76,7 @@ const Register = () => {
       <Helmet>
         <title>Register from</title>
       </Helmet>
-      {
-        user?<Successful></Successful>:
+      
         <div className="hero ">
           <div className="hero-content flex-col lg:w-2/3 w-full ">
             <h1 className="lg:text-5xl text-3xl font-bold ">Register</h1>
@@ -156,7 +154,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-       } 
+
     </div>
   );
 };

@@ -8,6 +8,7 @@ const AuthProvider = ({children}) => {
   // state for loading and user 
   const [user,setUser]=useState(null);
   const [loading,setLoading]=useState(true);
+  const [cardInfo,setCardInfo]=useState([])
   // function for createuser function
   const createUser=(email,password)=>{
     // use firebase build in functions
@@ -43,7 +44,18 @@ const AuthProvider = ({children}) => {
     }
   },[])
   // context value as object
-  const authInfo={user,createUser,logInuser,logOut,loading}
+  
+  // card information loaded
+  useEffect(()=>{
+      fetch("./data.json")
+      .then(result=>result.json())
+      .then((data)=>{
+        // console.log(data)
+        setCardInfo(data)
+      })
+      .catch((error)=>console.log(error))
+  },[])
+  const authInfo={user,createUser,logInuser,logOut,loading,cardInfo}
   return (
     // context provideing for all childern 
    <AuthContext.Provider value={authInfo}>
