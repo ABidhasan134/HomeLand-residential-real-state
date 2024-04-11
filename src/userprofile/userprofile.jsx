@@ -11,12 +11,12 @@ const Userprofile = () => {
             <title>user Profile</title>
         </Helmet>
       <div className='xl:flex h-auto justify-evenly grid p-6 bg-sky-50'>
+       <div className='flex xl:justify-between justify-evenly p-4'>
         {/* 1st colume */}
-       <div className='flex justify-between p-4'>
        <div className='xl:m-36 m-1 '>
         <div className='my-10'>
           <p>your ID:</p>
-          <p className='text-xl font-semibold'>{user.uid}</p>
+          <p className='text-xl font-semibold'>{user.uid.slice(0,4)}</p>
         </div>
         <div className='xl:my-10 my-2'>
           <p>Phone Number:</p>
@@ -28,7 +28,7 @@ const Userprofile = () => {
         <div className='xl:mt-36 mt-2'>
         <div className='mt-10'>
           <p>Name:</p>
-        <h1 className='text-5xl  font-semibold'>{user.displayName}</h1>
+        <h1 className='text-3xl  font-semibold'>{user.displayName}</h1>
         </div >
         <div className='mt-10'>
           <p>email:</p>

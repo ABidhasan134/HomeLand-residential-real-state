@@ -9,7 +9,7 @@ const CardsDitails = ({land}) => {
   return (
    <div >
      <div className="card card-compact w-auto bg-base-100 shadow-sm border-2">
-      <figure className="h-96">
+      <figure className="lg:h-96 md:h-72 h-48 p-2">
         <img
           src={land.image}
           alt="Photo of property"

@@ -6,7 +6,7 @@ const Card = () => {
     const{cardInfo}=useContext(AuthContext)
     // console.log(cardInfo);
   return (
-    <div className="grid grid-cols-3 border-2 border-red-500 gap-6">
+    <div className="mx-2 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
         {
             cardInfo.map((item)=>{
                 return <CardsDitails land={item} key={item.estate_id}></CardsDitails>
