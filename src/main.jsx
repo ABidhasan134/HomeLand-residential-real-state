@@ -13,12 +13,14 @@ import LogOut from "./log/logOut.jsx";
 import PriveteRoute from "./privetroute/priveteRoute.jsx";
 import Successful from "./register/successful.jsx";
 import CardDitails from "./Home/componente/cardDitails.jsx";
+import Error from "./error/error.jsx";
 // import Authprovider from './context/authprovider.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",

@@ -44,7 +44,7 @@ const CardsDitails = ({land}) => {
         </div>
     <hr className="border-1 border-sky-400 w-full mt-6 border-dashed" />
         {/* price and status end */}
-        <Link to={`/details/${land.id}`} className="btn">View Property</Link>
+        <Link to={`/details/${land.id}`} className="btn border-none bg-sky-400 hover:bg-sky-800 hover:text-white">View Property</Link>
         </div>
     </div>
    </div>
