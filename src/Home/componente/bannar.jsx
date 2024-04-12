@@ -1,100 +1,118 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import "./style.css";
-
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
+import React from "react";
 
 export default function Bannar() {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty("--progress", 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  };
+
   return (
-    <>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <div className="bg-opacity-50">
-            <img
-              className="z-10 "
-              src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/471752845.jpg?k=69a45cf53c31b88f7d38bfb61019117611cc2d5f7c5e5337cd811b834a0c3bda&o=&hp=1"
-              alt=""
-            />
-            <div className="z-30 relative  -top-96 text-sky-500">
-              <h1 className="text-5xl font-bold">Beachfront properties</h1>
-              <p className="text-orange-600">
-                you will find Infinity pool, Private beach access and Spa. we give best best luxary survice. <br />
-                Your family and friend will safe with us. If your are not Log in yeat pleas Log in.
-              </p>
-            <Link className="btn border-none bg-sky-400 hover:bg-sky-800 hover:text-white" to="/login">Log In</Link>
+       
+      <div className="carousel w-full lg:mb-5 relative sm:-top-18 -top-36 md:top-0 lg:top-0">
+        <div id="slide1" className="carousel-item relative w-full">
+          <div className="hero">
+            <div className="hero-content flex-col lg:flex-row justify-evenly">
+              <img
+                src="https://www.theluxurybali.com/wp-content/uploads/2014/12/Villa-Bayu-Gita-Beachfront-Pool-and-deck-1-660x440.jpg"
+                className="lg:h-[600px] rounded-lg lg:w-1/2"
+              />
+              <div>
+                <h1 className="text-5xl font-bold">Luxury Island Paradise</h1>
+                <p className="py-6">
+                Welcome to our exclusive luxury tour apartment company, <br />
+                where opulence meets convenience. We offer a curated <br />
+                 selection of premium properties for sale and rent, catering to discerning individuals seeking refined living experiences.
+                </p>
+                
+              </div>
             </div>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
-           <div className="bg-opacity-50">
-            <img
-              className="z-10 "
-              src="https://www.maxviewrealty.com/img/2017-11-23/skyline-mansion-707*471-13984.jpg"
-              alt=""
-            />
-            <div className="z-30 relative  -top-96 text-sky-500">
-              <h1 className="text-5xl font-bold">Beachfront properties</h1>
-              <p className="text-orange-600">
-              you will find Infinity pool, Private beach access and Spa. we give best best luxary survice. <br />
-                Your family and friend will safe with us. If your are not Log in yeat pleas Log in.
-              </p>
-              <Link className="btn border-none bg-sky-400 hover:bg-sky-800 hover:text-white" to="/login">Log In</Link>
-            </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide2" className="btn btn-circle">
+              ❯
+            </a>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-opacity-50">
-            <img
-              className="z-10 "
-              src="https://media-cdn.tripadvisor.com/media/photo-s/19/3a/42/dd/restaurant-at-ravine.jpg"
-              alt=""
-            />
-            <div className="z-30 relative  -top-56 text-sky-500">
-              <h1 className="text-5xl font-bold">Beachfront properties</h1>
-              <p className="text-orange-600">
-              you will find Infinity pool, Private beach access and Spa. we give best best luxary survice. <br />
-                Your family and friend will safe with us. If your are not Log in yeat pleas Log in.
-              </p>
-              <Link className="btn border-none bg-sky-400 hover:bg-sky-800 hover:text-white" to="/login">Log In</Link>
-            </div>
-          </div>
-        </SwiperSlide>
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
         </div>
-      </Swiper>
-    </>
-  );
-}
+        <div id="slide2" className="carousel-item relative w-full">
+          <div className="hero ">
+            <div className="hero-content flex-col lg:flex-row justify-evenly">
+              <img
+                src="https://www.ecowatch.com/wp-content/uploads/2021/10/1114608237-origin.jpg"
+                className="h-[600px] rounded-lg"
+              />
+              <div >
+                <h1 className="text-5xl font-bold">Remote Island Sanctuary</h1>
+                <p className="py-6">
+                Welcome to our exclusive luxury tour apartment company, <br />
+                where opulence meets convenience. We offer a curated <br />
+                 selection of premium properties for sale and rent, catering to discerning individuals seeking refined living experiences.
+                </p>
+                
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide3" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide3" className="carousel-item relative w-full">
+          <div className="hero">
+            <div className="hero-content flex-col lg:flex-row">
+              <img
+                src="https://na.rdcpix.com/1553713940/93a210875a43ac69f86eaad92b7d2a6dw-c0rd-w832_h468_r4_q80.jpg"
+                className="h-auto rounded-lg "
+              />
+              <div >
+                <h1 className="text-5xl font-bold">Lakefront Estate Mansion</h1>
+                <p className="py-6">
+                Welcome to our exclusive luxury tour apartment company, 
+                where opulence meets convenience. We offer a curated 
+                 selection of premium properties for sale and rent, catering to discerning individuals seeking refined living experiences.
+                </p>
+                
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide4" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide4" className="carousel-item relative w-full">
+        <div className="hero">
+            <div className="hero-content flex-col lg:flex-row">
+              <img
+                src="https://homeworlddesign.com/wp-content/uploads/2017/07/Boulder-Ridge-Mountain-Retreat-1.jpg"
+                className="h-auto rounded-lg"
+              />
+              <div >
+                <h1 className="text-5xl font-bold">Mountain Retreat Mansion</h1>
+                <p className="py-6">
+                Welcome to our exclusive luxury tour apartment company, 
+                where opulence meets convenience. We offer a curated 
+                 selection of premium properties for sale and rent, catering to discerning individuals seeking refined living experiences.
+                </p>
+                
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide1" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+      </div>
+
+  );}
