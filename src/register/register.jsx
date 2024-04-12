@@ -54,7 +54,8 @@ const Register = () => {
           toast("user created successfully");
           setUser({displayName : userName, photoURL : userphotoUrl}) 
           // navigate("/")
-        }).catch((error) => {
+        })
+        .catch((error) => {
           // An error occurred
           console.log(error)
           // ...

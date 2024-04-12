@@ -1,11 +1,11 @@
-import React, { useContext} from "react";
+import React, { useContext, useState} from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../context/authprovider";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
 import { GithubAuthProvider,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { FaGoogle } from "react-icons/fa";
 
 const LogIn = () => {
@@ -13,6 +13,7 @@ const LogIn = () => {
   const gitHubProvider = new GithubAuthProvider();
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
+  const [seePass, setSeePassword]=useState(false)
 
   // from submit function
   const handelLogInSubmit = (e) => {
@@ -106,24 +107,25 @@ const githublogInHandel = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="password"
+                   type={seePass?"text":"password"}
                     placeholder="password"
                     className="input input-bordered"
                     name="password"
                     required
                   />
-                  <ToastContainer></ToastContainer>
+                  <span className="absolute right-12 mt-12 sm:text-3xl text-2xl hover:cursor-pointer " onClick={()=>setSeePassword(!seePass)}>{seePass?<FaRegEyeSlash></FaRegEyeSlash>:<FaRegEye></FaRegEye>}</span>
                 </div>
                 <div className="form-control mt-6">
                   <button className="btn bg-sky-400 hover:bg-sky-700 hover:text-white">Login</button>
                 </div>
               </form>
   
+                  <ToastContainer></ToastContainer>
               <div>
-                <div className="w-full  p-6 gap-5">
-                  <button className="btn btn-outline w-[48%] ml-2 mr-2" onClick={githublogInHandel}>
+                <div className="flex w-full  p-6 gap-5">
+                  <button className="my-2 btn btn-outline w-[45%] sm:w-[48%] ml-2 mr-2" onClick={githublogInHandel}>
                     <span className="text-2xl"><FaGithub></FaGithub></span>git Hub logIn</button>
-                  <button className="btn bg-transparent bottom-2 border-green-800 w-[48%] ml-2 mr-2 hover:bg-green-800 hover:text-white" onClick={handelGoogleSubmit}>
+                  <button className="my-2 btn bg-transparent bottom-2 border-green-800 w-[45%] sm:w-[48%] ml-2 mr-2 hover:bg-green-800 hover:text-white" onClick={handelGoogleSubmit}>
                   <span className="text-2xl"><FaGoogle></FaGoogle></span>Google log in</button>
                 </div>
               </div>

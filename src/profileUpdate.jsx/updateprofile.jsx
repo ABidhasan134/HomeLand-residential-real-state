@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import updatelogo from "../../public/img/qRZm6CIDi.png"
 
 const UpdateProfile = () => {
-  const { user,logOut} = useContext(AuthContext);
+  const { user,logOut,setUser,setReload} = useContext(AuthContext);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       name: user.displayName,
@@ -26,13 +26,15 @@ const UpdateProfile = () => {
         photoURL: updateImgURL,
       });
       toast(`your name and photo url has been updated`);
-      setTimeout(() => {
-        logOut();
-      }, 2000);
+      setUser({displayName : updateName, photoURL : updateImgURL}) 
+      // setTimeout(() => {
+      //   logOut();
+      // }, 2000);
     } catch (error) {
       console.log(error);
       
     }
+    setReload(true);
   };
 
   return (
@@ -47,6 +49,7 @@ const UpdateProfile = () => {
             Update your Information
           </h1>
           <form className="card-body" onSubmit={handleSubmit(updateSubmit)}>
+            {/* name change */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Update Name:</span>
@@ -61,7 +64,7 @@ const UpdateProfile = () => {
               />
             </div>
 
-
+            {/* photo change */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Update Photo URL:</span>
@@ -75,6 +78,8 @@ const UpdateProfile = () => {
                 required
               />
             </div>
+            {/* email change start */}
+            {/* email chanege end */}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Update</button>
             </div>
