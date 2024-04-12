@@ -4,11 +4,11 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../context/authprovider";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
+import updatelogo from "../../public/img/qRZm6CIDi.png"
 
 const UpdateProfile = () => {
   const { user,logOut} = useContext(AuthContext);
-  const [error, setError] = useState(null); // State to handle errors
-  const { register, handleSubmit, setValue } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       name: user.displayName,
       url: user.photoURL,
@@ -30,18 +30,19 @@ const UpdateProfile = () => {
         logOut();
       }, 2000);
     } catch (error) {
-      setError(error)
+      console.log(error);
       
     }
   };
 
   return (
-    <div>
+    <div className="container mx-auto">
       <Helmet>
         <title>Update Profile</title>
       </Helmet>
-      <div className="hero">
-        <div className="w-full max-w-sm border-2 rounded-lg bg-base-100 m-10">
+      <div className="hero flex justify-center">
+        
+        <div className="w-full max-w-sm border-2 rounded-lg bg-base-100 m-10 z-50">
           <h1 className="text-center text-2xl font-bold p-6">
             Update your Information
           </h1>
@@ -77,14 +78,12 @@ const UpdateProfile = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Update</button>
             </div>
-            {error && (
-              <div className="text-red-500 mt-4">
-                Error: {error}
-              </div>
-            )}
           </form>
           <ToastContainer></ToastContainer>
         </div>
+          <div className="hidden sm:flex">
+            <img src={updatelogo} alt="" />
+          </div>
       </div>
     </div>
   );

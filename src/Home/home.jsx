@@ -12,7 +12,8 @@ const Home = () => {
   // console.log(authInfo);
   return (
     <>
-      <div className="container">
+      <div >
+      <div className="container mx-auto">
       <Helmet>
         <title>Home</title>
       </Helmet>
@@ -28,6 +29,7 @@ const Home = () => {
        } */}
       <ToastContainer></ToastContainer>
     </div>
+      </div>
     <Footer></Footer>
     </>
   );

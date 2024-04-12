@@ -1,13 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://w7.pngwing.com/pngs/97/846/png-transparent-house-real-estate-estate-agent-house-lake-angle-building-triangle-thumbnail.png" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://w7.pngwing.com/pngs/97/846/png-transparent-house-real-estate-estate-agent-house-lake-angle-building-triangle-thumbnail.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HomeLand</title>
+    <!-- aos animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- leflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

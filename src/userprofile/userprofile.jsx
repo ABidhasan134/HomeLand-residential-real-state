@@ -6,7 +6,7 @@ const Userprofile = () => {
   const {user}=useContext(AuthContext);
   console.log(user);
   return (
-    <div>
+    <div className="container mx-auto">
          <Helmet>
             <title>user Profile</title>
         </Helmet>
@@ -16,7 +16,7 @@ const Userprofile = () => {
        <div className='xl:m-36 m-1 '>
         <div className='my-10'>
           <p>your ID:</p>
-          <p className='text-xl font-semibold'>{user.uid.slice(0,4)}</p>
+          <p className='text-xl font-semibold'>{user.uid?.slice(0,5) || "365aj"}</p>
         </div>
         <div className='xl:my-10 my-2'>
           <p>Phone Number:</p>

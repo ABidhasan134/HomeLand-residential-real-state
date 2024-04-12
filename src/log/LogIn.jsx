@@ -78,7 +78,7 @@ const githublogInHandel = () => {
       .catch((error) => console.log("error", error.message));
   };
   return (
-    <div>
+    <div className="container mx-auto">
       <Helmet>
         <title>Log in from</title>
       </Helmet>

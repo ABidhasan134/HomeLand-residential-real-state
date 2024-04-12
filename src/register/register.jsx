@@ -15,7 +15,7 @@ import Successful from "./successful";
 
 const Register = () => {
   const navigate=useNavigate()
-  const {createUser,user,logOut}=useContext(AuthContext);
+  const {createUser,setReload,setUser}=useContext(AuthContext);
   const [error,setError]=useState()
   const [seePass, setSeePassword]=useState(false)
   // const naviget=useNavigate();
@@ -52,13 +52,15 @@ const Register = () => {
         })
         .then(() => {
           toast("user created successfully");
+          setUser({displayName : userName, photoURL : userphotoUrl}) 
           // navigate("/")
         }).catch((error) => {
           // An error occurred
           console.log(error)
           // ...
         });
-        logOut();
+        // logOut();
+        setReload(true);
         e.target.reset();
         navigate("/successregester")
         // ...
@@ -72,7 +74,7 @@ const Register = () => {
       
   };
   return (
-    <div>
+    <div className="container mx-auto">
       <Helmet>
         <title>Register from</title>
       </Helmet>

@@ -4,8 +4,10 @@ import Navbar from "./global/navbar";
 
 function App() {
 
-  return <div className="container mx-auto">
+  return <div >
+  <div className="container mx-auto">
   <Navbar></Navbar>
+  </div>
   <Outlet></Outlet>
   </div>;
 }

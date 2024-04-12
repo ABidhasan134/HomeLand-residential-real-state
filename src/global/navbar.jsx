@@ -85,6 +85,7 @@ const Navbar = () => {
               Log out
             </NavLink>
           </li>
+          <p>{user.displayName}</p>
         </ul>
       ) : (
         <ul className="menu menu-horizontal px-1 navbar-end">

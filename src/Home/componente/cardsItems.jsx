@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MdHolidayVillage } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoMdPricetags } from "react-icons/io";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const CardsDitails = ({land}) => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   // console.log(land);
   return (
-   <div >
+   <div  data-aos="fade-up"
+   data-aos-anchor-placement="top-bottom">
      <div className="card card-compact w-auto bg-base-100 shadow-sm border-2">
       <figure className="lg:h-96 md:h-72 h-48 p-2">
         <img
