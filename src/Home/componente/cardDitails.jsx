@@ -19,7 +19,7 @@ const CardDetails = () => {
   return (
     <div>
       <Helmet>
-            <title>Property Details</title>
+            <title>{landProperty.estate_title}</title>
         </Helmet>
       <p className=" text-center animate__animated animate__bounce mt-10">
         Catagory: <span className="md:text-2xl text-xl font-bold text-center mt-3 ">{landProperty.segment_name} is about {landProperty.area}</span> 

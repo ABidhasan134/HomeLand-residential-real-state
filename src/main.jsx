@@ -14,6 +14,7 @@ import PriveteRoute from "./privetroute/priveteRoute.jsx";
 import Successful from "./register/successful.jsx";
 import CardDitails from "./Home/componente/cardDitails.jsx";
 import Error from "./error/error.jsx";
+import Location from "./location/location.jsx";
 // import Authprovider from './context/authprovider.jsx';
 
 const router = createBrowserRouter([
@@ -49,12 +50,16 @@ const router = createBrowserRouter([
       {
         path: "/details/:id", // Corrected path and added leading slash
         loader: ({params}) =>params.id ,
-        element:<CardDitails></CardDitails> // Assuming you have a component named CardDetails
+        element:<PriveteRoute><CardDitails></CardDitails></PriveteRoute>
       },
       {
         path:"/successregester",
         element:<Successful></Successful>
       },
+      {
+        path:"/location",
+        element:<Location></Location>
+      }
       
     ],
   },
