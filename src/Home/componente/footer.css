@@ -1,0 +1,6 @@
+.footer-container {
+    background-image: url('path/to/your/svg.svg');
+    background-size: cover; /* or background-size: contain; depending on your preference */
+    /* Add other background properties like background-repeat, background-position if needed */
+  }
+  

@@ -17,12 +17,12 @@ const CardDetails = () => {
   }
   // console.log(landProperty);
   return (
-    <div className="container mx-auto">
+    <div >
       <Helmet>
             <title>{landProperty.estate_title}</title>
         </Helmet>
       <p className=" text-center animate__animated animate__bounce mt-10">
-        Catagory: <span className="md:text-2xl text-xl font-bold text-center mt-3 ">{landProperty.segment_name} is about {landProperty.area}</span> 
+         <span className="md:text-2xl text-xl font-bold text-center mt-3 ">{landProperty.segment_name} is about {landProperty.area}</span> 
       </p>
       
       <div class="hero mt-24 bg-base-100 mb-10">
@@ -54,7 +54,7 @@ const CardDetails = () => {
             <MdHolidayVillage className="text-green-600"></MdHolidayVillage>
             <p>{landProperty.segment_name}</p>
             </div>
-            <div className="flex items-center gap-2 text-xl">
+            <div className="flex items-center gap-2 text-xl mx-3">
               <IoLocationOutline className="text-green-600"></IoLocationOutline>
             <p>{landProperty.location}</p>
             </div>

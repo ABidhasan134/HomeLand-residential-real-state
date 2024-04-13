@@ -96,7 +96,7 @@ const UpdateProfile = () => {
             </div> */}
             {/* email chanege end */}
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Update</button>
+              <button className="btn bg-sky-300 hover:bg-sky-700 hover:text-white">Update</button>
             </div>
           </form>
           <ToastContainer></ToastContainer>
