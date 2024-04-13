@@ -12,7 +12,7 @@ const Home = () => {
   // console.log(authInfo);
   return (
     <>
-      <div >
+      <div className="container mx-auto">
       <div>
       <Helmet>
         <title>Home</title>

@@ -40,7 +40,7 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div >
       <Helmet>
         <title>Update Profile</title>
       </Helmet>

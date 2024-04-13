@@ -5,13 +5,13 @@ import Footer from "./Home/componente/footer";
 
 function App() {
 
-  return <div >
+  return < >
   <div className="container mx-auto">
   <Navbar></Navbar>
-  </div>
   <Outlet></Outlet>
+  </div>
   <Footer></Footer>
-  </div>;
+  </>;
 }
 
 export default App;
