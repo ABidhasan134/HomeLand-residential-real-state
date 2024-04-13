@@ -17,7 +17,7 @@ const CardDetails = () => {
   }
   // console.log(landProperty);
   return (
-    <div>
+    <div className="container mx-auto">
       <Helmet>
             <title>{landProperty.estate_title}</title>
         </Helmet>

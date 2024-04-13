@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import {Helmet} from "react-helmet";
 import { AuthContext } from '../context/authprovider';
 import { Link } from 'react-router-dom';
+import Bakground from "../../public/img/cool-background.png"
+import imgtheme from "../../public/img/The Little Things - UI Design.png"
 const Userprofile = () => {
   const {user}=useContext(AuthContext);
   console.log(user);
@@ -10,43 +12,33 @@ const Userprofile = () => {
          <Helmet>
             <title>user Profile</title>
         </Helmet>
-      <div className='xl:flex h-auto justify-evenly grid p-6 bg-sky-50'>
-       <div className='flex xl:justify-between justify-evenly p-4'>
-        {/* 1st colume */}
-       <div className='xl:m-36 m-1 '>
-        <div className='my-10'>
-          <p>your ID:</p>
-          <p className='text-xl font-semibold'>{user.uid?.slice(0,5) || "365aj"}</p>
-        </div>
-        <div className='xl:my-10 my-2'>
-          <p>Phone Number:</p>
-        <p className='text-xl font-semibold'>{user?.phoneNumber||'71***550100'}</p>
-        </div>
-        <Link to="/updateprofile" className='xl:flex hidden btn bg-transparent bottom-2 border-green-800 w-[78%] xl:w-full  ml-2 mr-2 hover:bg-sky-800 hover:text-white'>Update Your Profile</Link>
-        </div>
-       {/* 2nd colume */}
-        <div className='xl:mt-36 mt-2'>
-        <div className='mt-10'>
-          <p>Name:</p>
-        <h1 className='text-3xl  font-semibold'>{user.displayName}</h1>
-        </div >
-        <div className='mt-10'>
-          <p>email:</p>
-          <p className='text-xl font-semibold'>{user?.email||'ab@c.com'}</p>
-        </div>
-        </div>
-       </div>
-        {/* 3rd colume */}
-          <div className=" w-auto m-16 lg:mr-56 ">
-              <img src={user.photoURL} alt="User Profile" />
-        </div>
-        <div className='flex justify-center xl:hidden'>
-        <Link to="/updateprofile" className=' btn bg-transparent bottom-2 border-green-800 w-[78%] xl:w-full  ml-2 mr-2 hover:bg-sky-800 hover:text-white'>Update Your Profile</Link>
-        </div>
-        <div>
+  <div className="hero mt-2 min-h-[80vh] flex justify-center  gap-10" style={{backgroundImage: `url(${Bakground})`}}>
+  <div >
+  <div className="hero-content flex-col lg:flex-row">
 
-        </div>
-      </div>
+    <div>
+      <h1 className="text-5xl font-bold">{user.displayName}</h1>
+      <p >Email: {user.email}</p>
+      <p className="">user id: {user.uid?.slice(0,5) || "365aj"}</p>
+      <p className='text-xl font-semibold'>phone number: {user?.phoneNumber||'71***550100'}</p>
+      <p className="">user varification: {user?.emailVerified || "False"}</p>
+      <article>
+      {user.displayName} is a passionate and ambitious junior web developer with a knack for problem-solving and a keen eye for detail. With a solid foundation in HTML, CSS, and JavaScript, {user.displayName} thrives on learning new technologies and techniques to enhance his coding skills. He is dedicated to creating user-friendly and visually appealing websites, always striving to stay updated with the latest trends and best practices in web development. With a collaborative spirit and a proactive approach, {user.displayName} is eager to contribute to projects and grow within the dynamic field of web development.
+      </article>
+        <h1 className='text-3xl font-bold'>Skill at</h1>
+      <ul className='list-disc list-inside'>
+        <li>HTML 5</li>
+        <li>css 3 , tailwind css</li>
+        <li> javaScript, React</li>
+        <li> Firbase</li>
+        <li> git and github (verson control)</li>
+      </ul>
+    </div>
+
+    <img src={user.photoURL} className="max-w-xl rounded-lg " />
+  </div>
+</div>
+  </div>
     </div>
   )
 }

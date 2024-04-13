@@ -12,6 +12,7 @@ const UpdateProfile = () => {
     defaultValues: {
       name: user.displayName,
       url: user.photoURL,
+      // email: user.email,
     },
   });
 
@@ -19,6 +20,7 @@ const UpdateProfile = () => {
     try {
       const updateName = data.name;
       const updateImgURL = data.url;
+      // const updateEmail=data.email;
 
       // Update user profile in Firebase
       await updateProfile(user, {
@@ -79,6 +81,19 @@ const UpdateProfile = () => {
               />
             </div>
             {/* email change start */}
+            {/* <div className="form-control">
+              <label className="label">
+                <span className="label-text">Update Photo URL:</span>
+              </label>
+              <input
+                type="email"
+                placeholder="email"
+                className="input input-bordered"
+                name="email"
+                {...register("email")}
+                required
+              />
+            </div> */}
             {/* email chanege end */}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Update</button>

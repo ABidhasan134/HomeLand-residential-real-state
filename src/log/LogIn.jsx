@@ -1,7 +1,7 @@
 import React, { useContext, useState} from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../context/authprovider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
 import { GithubAuthProvider,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
@@ -13,7 +13,9 @@ const LogIn = () => {
   const gitHubProvider = new GithubAuthProvider();
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
-  const [seePass, setSeePassword]=useState(false)
+  const [seePass, setSeePassword]=useState(false);
+  const logLocation=useLocation()
+  console.log(logLocation);
 
   // from submit function
   const handelLogInSubmit = (e) => {
@@ -30,7 +32,7 @@ const LogIn = () => {
         // ...
         // navigate("/");
         setTimeout(() => {
-          navigate("/");
+          navigate(logLocation?.state?logLocation.state:"/");
         }, 3000);
       })
       .catch((error) => {
