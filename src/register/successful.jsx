@@ -2,6 +2,7 @@ import React from 'react'
 import 'animate.css';
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import singIcon from '../../public/img/Animation - 1713035402449.gif'
 
 const Successful = () => {
   return (
@@ -9,7 +10,8 @@ const Successful = () => {
     <div className='grid justify-center items-center h-[80vh] gap-0 bg-purple-50 rounded-lg'>
         <div className='text-center grid justify-center animate__animated animate__fadeInDownBig'>
         <div className='flex justify-center'>
-        <IoCheckmarkCircleSharp className='text-5xl text-green-500 text-center'></IoCheckmarkCircleSharp>
+        {/* <IoCheckmarkCircleSharp className='text-5xl text-green-500 text-center'></IoCheckmarkCircleSharp> */}
+        <img src={singIcon} alt="" />
         </div>
         <h1 className='text-5xl m-4'>Register successfuly</h1>
         <p>

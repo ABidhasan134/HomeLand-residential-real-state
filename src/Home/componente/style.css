@@ -1,6 +1,7 @@
-.active{
-  background: red;
+#sidebar a.active {
+  color: red;
 }
+
 .leaflet-container {
   margin-top: 10px;
   width: 100%;

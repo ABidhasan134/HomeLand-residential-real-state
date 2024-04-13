@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import locationIcon from '../../../public/img/Animation - 1712991377164 (1).gif'
+import moneyIcon from '../../../public/img/Animation - 1713035749776.gif'
 
 const CardsDitails = ({land}) => {
   useEffect(() => {
@@ -33,8 +35,10 @@ const CardsDitails = ({land}) => {
             <MdHolidayVillage></MdHolidayVillage>
             <p>{land.segment_name}</p>
             </div>
-            <div className="flex items-center gap-2 text-xl">
-              <IoLocationOutline></IoLocationOutline>
+            <div className="flex items-center  text-xl">
+              {/* <IoLocationOutline></IoLocationOutline> */}
+              {/* <locationIcon></locationIcon> */}
+              <img className="h-[50px]" src={locationIcon} alt="" />
             <p>{land.location}</p>
             </div>
         </div>
@@ -42,7 +46,8 @@ const CardsDitails = ({land}) => {
         {/* price and status */}
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2 text-xl">
-            <RiMoneyDollarCircleFill></RiMoneyDollarCircleFill>
+              <img className="h-[50px]" src={moneyIcon} alt="" />
+            {/* <RiMoneyDollarCircleFill></RiMoneyDollarCircleFill> */}
             <p>{land.price}</p>
             </div>
             <div className="flex items-center gap-2 text-xl">
