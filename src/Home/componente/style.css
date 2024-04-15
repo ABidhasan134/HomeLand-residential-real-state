@@ -1,5 +1,5 @@
-#sidebar a.active {
-  color: red;
+.active {
+  background-color: rgb(17, 158, 214) !important;
 }
 
 .leaflet-container {

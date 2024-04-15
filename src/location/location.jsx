@@ -15,7 +15,7 @@ const Location = () => {
         <title>Location</title>
       </Helmet>
 
-      <div>
+      <div className='relative -z-10 sm:z-10'>
         <MapContainer center={[23.7661, 90.3588]} zoom={12} scrollWheelZoom={false}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

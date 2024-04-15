@@ -34,6 +34,7 @@ const UpdateProfile = () => {
       // }, 2000);
     } catch (error) {
       console.log(error);
+      toast("Your img url is too long")
       
     }
     setReload(true);
@@ -44,7 +45,7 @@ const UpdateProfile = () => {
       <Helmet>
         <title>Update Profile</title>
       </Helmet>
-      <div className="hero flex justify-center">
+      <div className="hero flex justify-center relative -z-10 sm:z-10">
         
         <div className="w-full max-w-sm border-2 rounded-lg bg-base-100 m-10 z-50">
           <h1 className="text-center text-2xl font-bold p-6">
